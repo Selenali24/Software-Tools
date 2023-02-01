@@ -1,8 +1,129 @@
+/*
+* Created by: Selena Li
+* 1 Feb 2023
+*/
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(168,175,187);
 }
 
-a {
-  color: #00B7FF;
+/* Cheesecake Order Form */
+h1 {
+  color: rgb(170,91,102,1);
+  font-family: brush script MT, cursive;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color:rgb(237, 227, 207);
+  padding: 8px;
+}
+
+/* Image */
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* "Quantity:" label */
+p {
+  color: rgb(247, 228, 178, 1);
+  font-family: copperplate;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* "Toppping:" label */
+h2 {
+  color: rgb(247, 228, 178, 1);
+  font-family: copperplate;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* "Plain" label */
+#plain {
+  color: rgb(242,236,229);
+  font-family: Impact;
+}
+
+/* "Cherry" label */
+#cherry {
+  color: rgb(199,25,30);
+  font-family: Impact;
+}
+
+/* "Chocolate" label */
+#chocolate {
+  color: rgb(100, 68, 34, 1);
+  font-family: Impact;
+}
+
+/* "Notes" label */
+#notes {
+  font-weight: bolder;
+}
+
+/* Order button */
+button {
+  padding: 6px 16px;
+  font-size: 14px;
+  text-align: center;
+  color:black;
+  background-color:rgb(237, 227, 207);
+  border-radius: 10px;
+}
+
+/* "Orders for" label */
+h3 {
+  color: rgb(67,43,52);
+  font-family: copperplate;
+  font-style: italic;
+  font-weight: bolder;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+/* Bullet Point List */
+ul {
+  color: rgb(133, 93, 99, 1);
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: bolder;
+  margin-top: 0;
+}
+
+/* Order confirmation labels for "Topping" and "Quantity" */
+h4 {
+  color: rgb(247, 228, 178, 1);
+  font-family: copperplate;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Dropdown menu */
+select {
+  border: 0 none;
+  color: rgb(67,43,52);
+  background: transparent;
+  font-style: italic;
+  font-size: 17px;
+  font-weight: 550;
+  padding: 2px 10px;
+  width: 75px;
+  margin-top: 13px;
+  margin-left: 3px;
+  border-radius: 10px;
+  background-color: rgb(237, 227, 207);
+}
+#dropdown {
+  position: absolute;
+  overflow: hidden;
+  width: 75px;
+  background: url("arrow.gif") no-repeat scroll 319px 5px rgb(237, 227, 207);
 }

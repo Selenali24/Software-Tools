@@ -1,0 +1,133 @@
+<!-- 
+    Created by Selena Li
+    1 Feb 2023
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <link rel="stylesheets" href="style.css">
+    <title>Selena's Cheesecake Store</title>
+</head>
+
+<body>
+<div id="form">
+    <!-- Header at top of page -->
+    <h1>Cheesecake Order Form</h1> 
+
+    <!-- Image of cheesecake below header -->
+    <img src="https://www.onceuponachef.com/images/2017/12/cheesecake.jpg"/> 
+    <img src="https://www.mybakingaddiction.com/wp-content/uploads/2022/09/close-up-slice-cherry-cheesecake-hero-735x735.jpg"/> 
+    <img src="https://grandbaby-cakes.com/wp-content/uploads/2012/10/Chocolate-Cheesecake-6.jpg"/> 
+
+    <!-- Dropdown for choice of quantities-->
+    <p>
+        <label for="quantity">Quantity:</label>
+        <select name="quantity" id="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select> 
+        <br>
+    </p>
+
+    <!-- "Topping:" label-->
+    <h2>
+        <label for="Topping">Topping:</label><br>
+    </h2>
+
+    <!-- Radio buttons for topping options -->
+    <div class="topping">
+        <form>
+            <input type="radio" name="Topping" value="Plain">
+            <label for="Plain" id="plain">Plain</label><br>
+            <input type="radio" name="Topping" value="Cherry">
+            <label for="Cherry" id="cherry">Cherry</label><br>
+            <input type="radio" name="Topping" value="Chocolate">
+            <label for="Chocolate" id="chocolate">Chocolate</label><br>
+            <br>
+        </form>
+    </div>
+
+    <!-- Textarea for any special instructions or notes -->
+    <label for="Notes" id="notes">Notes:</label><br>
+    <textarea id="Notes" name="Notes" rows="4" cols="50" placeholder="Enter any special instructions here..."></textarea><br>
+
+    <!-- Order button -->
+    <button type="button" id="button" onclick="">Order</button>
+
+    <table id="table">
+    <tr>
+        <td>
+            <!-- Bottom header for # of orders made for a certain month -->
+            <h3>Orders for </h3>
+        </td>
+
+        <!-- Month dropdown -->
+        <td>
+            <div class="dropdown"><select name="dropdown" id="selectMonth" class="form-controrl" onfocus='this.size=5;' onblur='this.size=1' onchange='this.size=1; this.blur();'>
+                <option value="">Jan</option>
+                <option value="">Feb</option>
+                <option value="">Mar</option>
+                <option value="">Apr</option>
+                <option value="">May</option>
+                <option value="">Jun</option>
+                <option value="">Jul</option>
+                <option value="">Aug</option>
+                <option value="">Sep</option>
+                <option value="">Oct</option>
+                <option value="">Nov</option>
+                <option value="">Dec</option> 
+            </select></div>
+        </td>
+    </tr>
+    </table>
+
+    <!-- Hover for months dropdown -->
+    <script>
+        $(function(){
+            $("#selectMonth").hover(function() {
+                $(this).attr('size', 4);
+            },
+            function() {
+                $(this).attr('size', 1);
+            });
+        });
+    </script>
+
+    <!-- Bullet point list: # of each flavor sold last month -->
+    <ul>
+        <li>11 cherry</li>
+        <li>17 chocolate</li>
+        <li>31 plain</li>
+    </ul>
+</div>
+
+    <!-- Order confirmation/Thank you screen -->
+    <div style="display: none;" id="thankYouScreen">
+        <h1> Thank you! Your order has been placed :) </h1>
+        <h4 id="displayOrder"></h4>
+        <h4 id="displayQuantity"></h4>
+        <p id="extraNotes"></p>
+    </div>
+
+    <!-- Warning screen if notes says "vegan". Else, thank you screen and order details are displayed -->
+    <script>
+        $("#button").click(function() {
+            if($ ("#Notes").val().toLowerCase().indexOf("vegan") != -1) {
+                alert("WARNING! Cheesecakes contain dairy.");
+            }
+            else {
+                $ ("#form").removeAttr("style").hide();
+                $ ("#thankYouScreen").show();
+                $ ("#displayOrder").html("Topping: " + $ ("input[name='Topping']:checked").val());
+                $ ("#displayQuantity").html("Quantity: " + $ ("#quantity").val());
+                $ ("#extraNotes").html("Notes: " + $ ("#Notes").val());
+            }
+        })
+    </script>
+</body>
+</html>
