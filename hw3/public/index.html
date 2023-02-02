@@ -87,16 +87,7 @@
     </table>
 
     <!-- Hover for months dropdown -->
-    <script>
-        $(function(){
-            $("#selectMonth").hover(function() {
-                $(this).attr('size', 4);
-            },
-            function() {
-                $(this).attr('size', 1);
-            });
-        });
-    </script>
+    <script src="javascripts/monthDropdown.js"></script>
 
     <!-- Bullet point list: # of each flavor sold last month -->
     <ul>
@@ -115,19 +106,6 @@
     </div>
 
     <!-- Warning screen if notes says "vegan". Else, thank you screen and order details are displayed -->
-    <script>
-        $("#button").click(function() {
-            if($ ("#Notes").val().toLowerCase().indexOf("vegan") != -1) {
-                alert("WARNING! Cheesecakes contain dairy.");
-            }
-            else {
-                $ ("#form").removeAttr("style").hide();
-                $ ("#thankYouScreen").show();
-                $ ("#displayOrder").html("Topping: " + $ ("input[name='Topping']:checked").val());
-                $ ("#displayQuantity").html("Quantity: " + $ ("#quantity").val());
-                $ ("#extraNotes").html("Notes: " + $ ("#Notes").val());
-            }
-        })
-    </script>
+    <script src="javascripts/orderButton.js"></script>
 </body>
 </html>
